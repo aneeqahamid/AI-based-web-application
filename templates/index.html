@@ -1,14 +1,20 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Image Processing Web App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Processing</title>
 </head>
 <body>
-    <h1>Image Processing Web App</h1>
-    <form method="POST" action="/upload" enctype="multipart/form-data">
-        <input type="file" name="file">
+    <h1>AI Image Processing</h1>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png" required>
         <input type="submit" value="Upload and Process">
     </form>
+
+    <h2>Processed Image:</h2>
+    <img src="{{ processed_filename }}" alt="Processed Image" style="max-width: 500px;">
+
 </body>
 </html>
